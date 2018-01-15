@@ -35,7 +35,7 @@ class Login extends Component {
                 <h2>登录页面</h2>
                 <button onClick={(e)=>this.toMain(4444444)}>登录跳转</button>
                 <button onClick={(e) => this.toMainWan(222)}>登录跳转2</button>
-                <button onClick={(e)=>this.toMainWan(444)}>登录跳转44</button>
+                {/* <button onClick={(e)=>this.toMainWan(444)}>登录跳转44</button> */}
             </div>
         )
     }
