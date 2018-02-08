@@ -6,13 +6,15 @@ import { Router, Route } from 'react-router-dom';
 import history from './common/history'
 import Login from './common/pages/login'
 import Main from './common/pages/main'
+import Bac from './common/pages/bac'
 
 class App extends Component {
   render() {
     return (
       <Router history={history}>
         <div className="container">
-          <Route  path='/' component={Login} exact />
+          <Route path='/' component={Login} exact />
+          <Route path='/bac' component={Bac}  />
           <Route path='/main' component={Main} />
         </div>
       </Router>
