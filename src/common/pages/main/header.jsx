@@ -4,8 +4,8 @@ class MainHeader extends Component {
 
     render() {
         return (
-            <div className="MainHeader">
-                左边导航栏
+            <div className="mainHeader">
+                <span className="topText">上边导航栏</span>
             </div>
         )
     }

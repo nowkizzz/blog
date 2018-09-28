@@ -5,8 +5,9 @@ import './common/less/common.less'
 import { Router, Route } from 'react-router-dom';
 import history from './common/history'
 import Login from './common/pages/login'
-import Main from './common/pages/main'
+import Main from './common/pages/main/main'
 import Bac from './common/pages/bac'
+import Detail from './common/pages/detail';
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
           <Route path='/' component={Login} exact />
           <Route path='/bac' component={Bac}  />
           <Route path='/main' component={Main} />
+          <Route path='/detail/:id' component={Detail} />
         </div>
       </Router>
     )

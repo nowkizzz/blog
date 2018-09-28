@@ -4,7 +4,8 @@ class Bac extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            todayDate: this.formateTime()
+            todayDate: this.formateTime(),
+            isLeave: false
         }
         this.toMain = this.toMain.bind(this)
         // console.log(this.state)
@@ -15,11 +16,18 @@ class Bac extends Component {
         return date.getFullYear() + separator + ((date.getMonth() < 9) ? ('0' + (date.getMonth() + 1)) : (date.getMonth() + 1)) + separator + ((date.getDate() < 10) ? ('0' + date.getDate()) : date.getDate());
     }
     toMain() {
-        this.props.history.push('/main')
+        this.setState({
+            isLeave: true
+        },() => {
+            setTimeout(() => {
+                this.props.history.push('/main')
+            }, 500);
+        })
+
     }
     render() {
         return (
-            <div className="Bac">
+            <div className="Bac" style={{'transform': `translateY(${this.state.isLeave ? '-3000px' : 0})`}}>
                 <div className="bacContent">
                     <p>{this.state.todayDate}</p>
                     {/* <a href="/main" className="mainLink" onClick={this.toMain}>点击进入</a> */}
