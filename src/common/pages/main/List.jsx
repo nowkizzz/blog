@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ListItem from './listItem';
-import {getList} from '@/api';
+import { getList } from '@/api';
+// import { message,Button } from 'antd';
 
 class List extends Component {
     constructor() {
@@ -9,28 +10,30 @@ class List extends Component {
             count: 0,
             list: [{
                 id: 1
-            },{
+            }, {
                 id: 2
-            },{
+            }, {
                 id: 3
             }]
         }
     }
     async getList() {
-        let data = await getList() 
+        let data = await getList()
         console.log(data)
-        this.setState({
-            count: data.data
-        })
+        if (data) {
+            this.setState({
+                count: data.data
+            })
+        }
+
     }
     componentDidMount() {
         this.getList()
     }
-    
+
     render() {
         return (
             <div className="mainList">
-                {this.state.count}
                 {
                     this.state.list.map(item => {
                         return (

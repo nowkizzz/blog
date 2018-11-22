@@ -14,12 +14,16 @@ router.get('/abc', async (ctx, next) => {
 })
 
 router.get('/api/getBlogList', async (ctx, next) => {
-  console.log(ctx.params,1111111111);
+
   ctx.body = {
     data: 1111,
     success: true
   }
+})
 
+router.get('/api/getUserInfo', async (ctx, next) => {
+  
+  await next()
 })
 
 app.use(router.routes());

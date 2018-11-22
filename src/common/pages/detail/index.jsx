@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PersonalInfo from './personalInfo/index.jsx';
 import './detail.less';
 
 class detail extends Component {
@@ -13,6 +14,7 @@ class detail extends Component {
             文章内容，源于世界之道，直到一刻的达成
           </article>
         </section>
+        <PersonalInfo></PersonalInfo>
       </div>
     );
   }

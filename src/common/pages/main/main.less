@@ -8,12 +8,14 @@
 
 .mainContent {
   width: 60%;
-  margin: 6rem auto 2rem auto;
+  margin: 5rem auto 2rem auto;
+  box-sizing: content-box;
   .mainList {
     text-align: center;
     padding: 1rem 0;
     position: relative;
     &:before {
+      box-sizing: content-box;
       content: '';
       position: absolute;
       width: 1rem;
@@ -24,6 +26,7 @@
       top: 0.78rem;
     }
     &:after {
+      box-sizing: content-box;
       content: '';
       position: absolute;
       width: 1rem;
@@ -36,6 +39,10 @@
     .listItem {
       padding-top: 4rem;
       position: relative;
+      box-sizing: content-box;
+      p {
+        margin: 1em 0;
+      }
       .title {
         a {
           color: #555;
@@ -48,6 +55,7 @@
           border-bottom: none;
           position: relative;
           &:before {
+            box-sizing: content-box;
             content: '';
             position: absolute;
             width: 100%;
@@ -95,6 +103,7 @@
         }
       }
       &:before {
+        box-sizing: content-box;
         content: '';
         height: 4rem;
         width: 0.1rem;
