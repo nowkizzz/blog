@@ -98,7 +98,7 @@
   },
   "proxy": {
     "/api/*": {
-      "target": "http://localhost:5700"
+      "target": "http://localhost:5480"
     }
   },
   "eslintConfig": {

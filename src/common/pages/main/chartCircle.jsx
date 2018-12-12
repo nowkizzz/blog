@@ -6,7 +6,7 @@ class chartCircle extends Component {
     
   }
   mouseMove(e) {
-    console.log(e.target);
+    // console.log(e.target);
   }
   render() {
     let {x,y} = this.props;

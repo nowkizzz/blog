@@ -14,7 +14,7 @@ class Main extends Component {
     }
     
     mouseMove(e) {
-        console.log(e.clientX, e.clientY);
+        // console.log(e.clientX, e.clientY);
         this.setState({
             clientX: e.clientX,
             clientY: e.clientY

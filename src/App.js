@@ -14,7 +14,7 @@ class App extends Component {
     return (
       <Router history={history}>
         <div className="container">
-          <Route path='/' component={Login} exact />
+          <Route path='/' component={Bac} exact />
           <Route path='/bac' component={Bac}  />
           <Route path='/main' component={Main} />
           <Route path='/detail/:id' component={Detail} />

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ListItem from './listItem';
-import { getList } from '@/api';
+import { getList,addUsers } from '@/api';
+import {Message} from 'antd';
 // import { message,Button } from 'antd';
 
 class List extends Component {
@@ -19,7 +20,6 @@ class List extends Component {
     }
     async getList() {
         let data = await getList()
-        console.log(data)
         if (data) {
             this.setState({
                 count: data.data
@@ -27,8 +27,19 @@ class List extends Component {
         }
 
     }
+    async addUsers() {
+        let query = {
+            name: 'abc',
+            password: '1123'
+        }
+        let res = await addUsers(query)
+        if (res.success) {
+            Message.success('插入成功');
+        }
+    }
     componentDidMount() {
         this.getList()
+        this.addUsers();
     }
 
     render() {
