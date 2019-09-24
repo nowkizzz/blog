@@ -27,7 +27,6 @@ class Login extends Component {
         })
         console.log(pan,33333333,this.state.aaa)
         // this.props.history.push('/main')
-
     }
     render() {
         return (

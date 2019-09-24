@@ -9,7 +9,7 @@ import Main from './common/pages/main'
 
 class App extends Component {
   render() {
-    return (
+    return ( 
       <Router history={history}>
         <div className="container">
           <Route  path='/' component={Login} exact />
