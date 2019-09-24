@@ -8,6 +8,7 @@ import Login from './common/pages/login'
 import Main from './common/pages/main/main'
 import Bac from './common/pages/bac'
 import Detail from './common/pages/detail';
+import Admin from './common/pages/admin/index.jsx'
 
 // document.onclick = function (e) {
 //   circleDot(e)
@@ -62,6 +63,7 @@ class App extends Component {
           <Route path='/bac' component={Bac} />
           <Route path='/main' component={Main} />
           <Route path='/detail/:id' component={Detail} />
+          <Route path='/admin' component={Admin} />
         </div>
       </Router>
     )
