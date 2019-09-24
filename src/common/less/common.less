@@ -1,3 +1,79 @@
 h2 {
     color: red;
 }
+body,html {
+    height: 100%;
+    width: 100%;
+}
+.container,#root {
+    height: 100%;
+    width: 100%;
+}
+
+@keyframes bounceInShowUp {
+    0%, 60%, 75%, 90%, 100% {
+        animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+    }
+    0% {
+        opacity: 0;
+        transform: translate3d(0,-2000px, 0);
+    }
+    60% {
+        opacity: 1;
+        transform: translate3d(0,20px,0);
+    }
+    75% {
+        transform: translate3d(0,-10px,0);
+    }
+    90% {
+        transform: translate3d(0,5px,0);
+    }
+    100% {
+        transform: translateZ(0);
+    }
+}
+
+.Bac {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../../assets/wallhaven-610303.jpg') no-repeat;
+    transition: transform 0.8s ease-in-out;
+    .bacContent {
+        border: 1px solid #fff;
+        border-radius: 55%;
+        text-align: center;
+        padding-top: 2rem;
+        width: 14%;
+        height: 16%;
+        overflow: hidden;
+        animation: bounceInShowUp 2s;
+        @keyframes opacityShow 
+        {
+            0% {
+                
+                opacity: 0;
+            }
+            100% {
+                opacity:1;
+            }
+        }
+        p {
+            color: #fff;
+            font-size: 18px;
+        }
+        a {
+            box-sizing: border-box;        
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            border-bottom:1px solid #fff;
+            padding-bottom: 0.1rem;
+            padding-top: 0.5rem;
+            font-size: 19px;
+        }
+    }
+}
+
