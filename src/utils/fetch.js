@@ -97,7 +97,7 @@ async function commonFetcdh(url, options, method = 'GET') {
         if (responseJson.success) {
             return responseJson
         } else {
-            alert(responseJson.message)
+            // alert(responseJson.message)
             return ''
         }
     } catch (e) {

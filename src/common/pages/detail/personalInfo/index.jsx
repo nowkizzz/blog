@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './personalInfo.less';
-let logo = require('@/assets/headImage.jpg');
+// let logo = require('@/assets/headImage.jpg');
+import {avatar} from '@/utils/config'
 class personalInfo extends Component {
   render() {
     return (
       <div className="personalInfoPane">
         <div className="headerImage">
           {/* <img src="../../../../assets/headImage.jpg" alt=""/> */}
-          <img src={logo} alt=""/>
+          <img src={avatar} alt=""/>
         </div>
         <div className="content">
           <p className="name">NowkiLi</p>

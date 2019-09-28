@@ -38,8 +38,8 @@ class List extends Component {
         }
     }
     componentDidMount() {
-        this.getList()
-        this.addUsers();
+        // this.getList()
+        // this.addUsers();
     }
 
     render() {
