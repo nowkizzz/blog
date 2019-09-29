@@ -7,9 +7,10 @@ class detail extends Component {
     return (
       <div className="detailPage">
         <header>
-          详情页头部栏
+          <p className="headerText">有朋自远方来，不亦乐乎</p> 
         </header>
         <section className="detailPageContainer">
+          <h3>论自己与世界的见闻</h3>
           <article>
             文章内容，源于世界之道，直到一刻的达成
           </article>
