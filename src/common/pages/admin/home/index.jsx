@@ -4,7 +4,7 @@ export class Home extends Component {
     render() {
         return (
             <div>
-                博客管理首页
+                <h2>welcome to the nowkizzz blog</h2>
             </div>
         );
     }

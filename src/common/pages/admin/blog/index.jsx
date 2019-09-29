@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 import { Table, Button } from 'antd';
 import { getBlogList } from '@/api'
-
+function itemRender(current, type, originalElement) {
+  if (type === 'prev') {
+    return <a>上一页</a>;
+  } else if (type === 'next') {
+    return <a>下一页</a>;
+  }
+  return originalElement;
+}
 export class Blog extends Component {
   constructor(props) {
     super(props);
@@ -19,11 +26,16 @@ export class Blog extends Component {
     });
 
   }
-  viewItem() {
+  viewItem(record) {
+    this.props.history.push('/detail/' + record.id)
+  }
+  delteItem(record) {
+    let id = record.id;
 
   }
-  delteItem() {
-
+  // 编辑
+  editItem(record) {
+    this.props.history.push('/admin/blog/edit/' + record.id)
   }
   // 点击添加博客按钮
   addBlog() {
@@ -52,25 +64,25 @@ export class Blog extends Component {
       {
         title: '文章名称',
         dataIndex: 'title',
-        align:'center',
+        align: 'center',
         headerAlign: 'center'
       },
       {
         title: '文章作者',
         dataIndex: 'author',
-        align:'center',
+        align: 'center',
         headerAlign: 'center'
       },
       {
         title: '文章摘要',
         dataIndex: 'remark',
-        align:'center',
+        align: 'center',
         headerAlign: 'center'
       },
       {
         title: '创建时间',
         dataIndex: 'createTimeTip',
-        align:'center',
+        align: 'center',
         headerAlign: 'center'
       },
       {
@@ -79,7 +91,8 @@ export class Blog extends Component {
         headerAlign: 'center',
         render: (text, record) => {
           return <div>
-            <Button type="default" style={{marginRight:20}} onClick={() => this.viewItem(record)}>查看</Button>
+            <Button type="default" style={{ marginRight: 20 }} onClick={() => this.viewItem(record)}>查看</Button>
+            <Button type="default" style={{ marginRight: 20 }} onClick={() => this.editItem(record)}>编辑</Button>
             <Button type="danger" onClick={() => this.deleteItem(record)}>删除</Button>
           </div>
         }
@@ -97,10 +110,13 @@ export class Blog extends Component {
         console.log(selected, selectedRows, changeRows);
       },
     };
-    const pagination = {
+    const tablePagination = {
+      // itemRender,
       current: this.state.pageIndex,
       pageSize: this.state.pageSize,
-
+      total: this.state.totalCount,
+      hideOnSinglePage: true,
+      // showTotal: (total, range) => `当前显示${range[0]}-${range[1]}条记录，共${total}条记录`
     }
     return (
       <div className="admin-blog-page">
@@ -115,7 +131,7 @@ export class Blog extends Component {
           rowKey={record => record.id}
           loading={this.state.loading}
           onChange={this.handleTableChange}
-          pagination={pagination}
+          pagination={tablePagination}
         />
       </div>
     );

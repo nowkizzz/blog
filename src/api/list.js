@@ -1,9 +1,9 @@
-import {getItems, postItems} from '@/utils/fetch.js';
+import { getItems, postItems } from '@/utils/fetch.js';
 
 export const getBlogList = (params = {}) => {
-  return getItems('/api/blog/blogs', params)
+  return getItems('/api/blogs', params)
 }
 
 export const getList = (params = {}) => {
-  return getItems('/api/blog/blogs', params)
+  return getItems('/api/blogs', params)
 }

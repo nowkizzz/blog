@@ -1,4 +1,4 @@
-import {message} from 'antd';
+import { message } from 'antd';
 
 function getPostPamras(query) {
     if (typeof query === 'string') return query
@@ -7,7 +7,7 @@ function getPostPamras(query) {
         for (let key in query) {
             // 判断为数组
             if (Object.prototype.toString.call(query[key]) === '[Object Array]') {
-                query[key].forEach( element => {
+                query[key].forEach(element => {
                     if (str !== '') {
                         str = str + '&' + key + '=' + element
                     } else {
@@ -71,6 +71,7 @@ async function commonFetcdh(url, options, method = 'GET') {
     console.log(searchStr);
     console.log('====================================');
     let initObj = {}
+    // 设置方法
     if (method === 'GET') {
         url = url + (searchStr === '' ? '' : '?' + searchStr)
         initObj = {
@@ -123,4 +124,13 @@ export function getItems(url, options) {
  */
 export function postItems(url, options) {
     return commonFetcdh(url, options, 'POST')
+}
+
+/**
+ * DELETE 请求
+ * @param url 请求地址
+ * @param options 请求参数
+ */
+export function deleteItems(url, options) {
+    return commonFetcdh(url, options, 'DELETE')
 }
