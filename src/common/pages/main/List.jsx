@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ListItem from './listItem';
-import { getList,addUsers } from '@/api';
-import {Message} from 'antd';
+import { getList, addUsers } from '@/api';
+import { message } from 'antd';
 // import { message,Button } from 'antd';
 
 class List extends Component {
@@ -34,7 +34,7 @@ class List extends Component {
         }
         let res = await addUsers(query)
         if (res.success) {
-            Message.success('插入成功');
+            message.success('插入成功');
         }
     }
     componentDidMount() {
